@@ -10,12 +10,16 @@ O projeto ajuda a entender padrões de design e bibliotecas/frameworks de UI, aj
 
 ## Quais tecnologias foram utilizadas ?
 
-Projeto criado usando o [Create React App](https://github.com/facebookincubator/create-react-app).
+* [Create React App](https://github.com/facebookincubator/create-react-app).
+* [Google Maps React](https://www.npmjs.com/package/google-maps-react).
+* [SnazzyMaps](https://snazzymaps.com/style/14889/flat-pale).
 
 ## Como rodar o projeto ?
 
-Baixe o projeto em sua maquina navegue até a pasta do projeto pelo terminal e rode `npm install` e depois rode `npm start`.
+* Faça o Download do projeto
+* Instale as dependencias do projeto com `npm install` 
+* Rode o projeto com `npm start`.
 
 ## Creditos
 
-Não definido
+* [Make a Google Map with React](https://www.youtube.com/watch?v=LRptz31H0vI).
