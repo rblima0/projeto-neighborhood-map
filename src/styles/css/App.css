@@ -1,0 +1,72 @@
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.aside {
+    position: absolute;
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+    background-color: #6195a0;
+}
+
+.logo img {
+    display: block;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+.location-filter input {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: 30px;
+    padding: 0.3em;
+}
+
+::placeholder {
+    color: #000;
+    text-transform: uppercase;
+}
+
+:-ms-input-placeholder {
+    color: #000;
+    text-transform: uppercase;
+}
+
+::-ms-input-placeholder { 
+    color: #000;
+    text-transform: uppercase;
+}
+
+nav p {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.8em 0 1.3em 0;
+}
+
+nav ul li {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: .5em;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+nav ul li:hover {
+    color: #000;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
