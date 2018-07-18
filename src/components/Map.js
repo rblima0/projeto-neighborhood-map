@@ -10,7 +10,8 @@ const Map = compose(withScriptjs, withGoogleMap)(props =>
 		defaultCenter={{ lat: -23.454315, lng: -46.533652 }}
 		defaultOptions={{ styles: MapStyles }} 
 	>
-      		{props.locations.map(location => (
+		{ props.locationslength.length === 0 ?
+      		props.locations.map(location => (
 			<MarkerInfo
 				key={location.place_id}
 				id={location.place_id}
@@ -20,7 +21,18 @@ const Map = compose(withScriptjs, withGoogleMap)(props =>
 				clickId={props.clickId}
 				isOpen={props.isOpen}
 			/>
-		))}
+		)): 
+		props.locationslength.map(location => (
+		<MarkerInfo
+				key={location.place_id}
+				id={location.place_id}
+				location={location}
+				locationPosition={location.position}
+				onToggleOpen={props.onToggleOpen}
+				clickId={props.clickId}
+				isOpen={props.isOpen}
+			/>
+		))
 	}
     </GoogleMap>
 )

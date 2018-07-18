@@ -10,14 +10,31 @@ class App extends Component {
 	state = {
 		locations: [],
 		locationslength: [],
-		query: '',
+		query: ''
 	}
-
+	
 	componentDidMount() {
 		this.setState({
 			locations: Locations,
 			locationslength: Locations,
 		});
+	}
+
+	updateQuery = (query) => {
+
+		this.setState({ query: query.trim() });
+		const regex = /[A-Z][a-z]*/i;
+
+		const { locations } = this.state;
+		let locationslength;
+
+		if(query) {
+			const match = new RegExp(regex.exec(query), 'ig');
+			locationslength = locations.filter(location => match.test(location.long_name));
+		} else {
+			locationslength = locations;
+		}
+		this.setState({ locationslength });
 	}
 
 	onToggleOpen = (id, isOpen) => {
@@ -31,7 +48,11 @@ class App extends Component {
 			<section className="menu">
 				<input type="checkbox" id="show-menu"/>
 				<div id="canvas">
-					<MapFilter />
+					<MapFilter
+						filterState={this.state}
+						updateQuery={this.updateQuery}
+						onToggleOpen={this.onToggleOpen}
+					/>
 				<div id="content">
 					<Map
 						googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLEMAPS_API_KEY}&v=3`}
