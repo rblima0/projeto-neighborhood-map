@@ -2,12 +2,13 @@ import React from 'react';
 import Logo from '../styles/icons/logo.png';
 import { DebounceInput } from 'react-debounce-input';
 
+/* Utilizando destructuring do JavaScript para decompor as props em um só objeto nos parametros */
 function MapFilter({ updateQuery, filterState, onToggleOpen }) {
 
     const { locations, locationslength } = filterState;
 
     return(
-        <nav>
+        <div>
         <div id="fix-bar">        
             <div className="push">
                 <label className="hamburguer" htmlFor="show-menu">
@@ -19,12 +20,13 @@ function MapFilter({ updateQuery, filterState, onToggleOpen }) {
             </div>
         </div>
 
-        <div id="nav">
+        <nav id="nav">
             <div className="logo">
                 <img src={Logo} alt="Logotipo Neighborhood"></img>
             </div>
 
             <div className="location-filter">
+                {/* Melhorando a experiencia do usuario com Debounce */}
                 <DebounceInput
                     type="text"
                     placeholder="Preencha e filtre lugares"
@@ -45,10 +47,10 @@ function MapFilter({ updateQuery, filterState, onToggleOpen }) {
                     >{location.long_name}</li>
                 )}
             </ul>
-        </div>
+        </nav>
 
         <label htmlFor="show-menu" className="mask"></label>
-        </nav>
+        </div>
     )
 }
 export default MapFilter;

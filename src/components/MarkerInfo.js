@@ -12,6 +12,7 @@ class MarkerInfo extends Component {
         foursquareVenues: {}
     }
 
+    /* Carregando informações das localizações da API do Foursquare */
     componentDidMount() {
         const id = this.props.id;
 
@@ -41,7 +42,6 @@ class MarkerInfo extends Component {
                 onCloseClick={() => onToggleOpen(id, 'close')}
             >
                 <div className="window-info">
-                    {console.log(foursquareVenues)}
                     <h2>{ foursquareVenues.name }</h2>
                     <p><span>Tipo:</span> { foursquareVenues.categories[0].name }</p>
                     <p><span>Endereço:</span> { foursquareVenues.location.address }</p>

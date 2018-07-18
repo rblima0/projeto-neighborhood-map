@@ -13,6 +13,7 @@ class App extends Component {
 		query: ''
 	}
 	
+	/* Informações invocadas imediatamente após um componente ser montado */
 	componentDidMount() {
 		this.setState({
 			locations: Locations,
@@ -20,6 +21,7 @@ class App extends Component {
 		});
 	}
 
+	/* Função para pesquisar e filtrar as localizações do mapa */
 	updateQuery = (query) => {
 
 		this.setState({ query: query.trim() });
@@ -37,6 +39,7 @@ class App extends Component {
 		this.setState({ locationslength });
 	}
 
+	/* Função de click nas localizações para mostrar ou ocultar */
 	onToggleOpen = (id, isOpen) => {
 		this.setState({
 			clickId: id, isOpen
@@ -45,7 +48,7 @@ class App extends Component {
 	
 	render() {
 		return (
-			<section className="menu">
+			<header className="menu">
 				<input type="checkbox" id="show-menu"/>
 				<div id="canvas">
 					<MapFilter
@@ -68,7 +71,7 @@ class App extends Component {
 					/>
 				</div>
 				</div>
-			</section>
+			</header>
 		);
 	}
 }
