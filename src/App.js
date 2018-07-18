@@ -9,7 +9,21 @@ class App extends Component {
 
 	state = {
 		locations: [],
+		locationslength: [],
 		query: '',
+	}
+
+	componentDidMount() {
+		this.setState({
+			locations: Locations,
+			locationslength: Locations,
+		});
+	}
+
+	onToggleOpen = (id, isOpen) => {
+		this.setState({
+			clickId: id, isOpen
+		});
 	}
 	
 	render() {
@@ -24,6 +38,12 @@ class App extends Component {
 						loadingElement={<div style={{ height: `100%` }} />}
 						containerElement={<div style={{ height: `100%`, width:`100%`, position:`fixed` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
+
+						locations={this.state.locations}
+						locationslength={this.state.locationslength}
+						onToggleOpen={this.onToggleOpen}
+						clickId={this.state.clickId}
+						isOpen={this.state.isOpen}
 					/>
 				</div>
 				</div>
