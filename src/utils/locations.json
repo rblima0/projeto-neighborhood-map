@@ -1,0 +1,72 @@
+[
+    {
+        "place_id" : "4bb2aec24019a5937f3637b8",
+        "types" : "park",
+        "long_name" : "Parque Bosque Maia",
+        "formatted_address" : "Parque Bosque Maia - Av. Paulo Faccini, s/n - Centro, Guarulhos - SP, 07115-260, Brasil",
+        "position": {
+            "lat" : -23.4567117,
+            "lng" : -46.5303528
+        }
+    },
+    {
+        "place_id" : "4c07cb38a0129c740c97d2c9",
+        "types" : "park",
+        "long_name" : "Lago dos Patos",
+        "formatted_address" : "Lago dos Patos - R. Nossa Sra. de Lourdes - Vila Galvao, Guarulhos - SP, 07074-030, Brasil",
+        "position": {
+            "lat" : -23.4522575,
+            "lng" : -46.5622794
+        }
+    },
+    {
+        "place_id" : "4c3474a109a99c7451230c2a",
+        "types" : "zoo",
+        "long_name" : "Zoológico Municipal de Guarulhos",
+        "formatted_address" : "Rua Dona Glória Pagnoncelli, 344 - Jardim Rosa de Franca, Guarulhos - SP, 07081-120, Brasil",
+        "position": {
+            "lat" : -23.4426321,
+            "lng" : -46.5532729
+        }
+    },
+    {
+        "place_id" : "4ca91e4ca643b71392f8e8a6",
+        "types" : "park",
+        "long_name" : "Praca dos Mamonas Assassinas",
+        "formatted_address" : "Avenida Odair Santanelli - Av. Odair Santaneli - Parque Cecap, Guarulhos - SP, 07190-002, Brasil",
+        "position": {
+            "lat" : -23.4515513,
+            "lng" : -46.4978072
+        }
+    },
+    {
+        "place_id" : "4bcb28dc68f976b0a7736083",
+        "types" : "park",
+        "long_name" : "Parque Ecológico do Tietê",
+        "formatted_address" : "Parque Ecológico do Tietê - Rod. Ayrton Senna, 70 - Vila Santo Henrique, São Paulo - SP, Brasil",
+        "position": {
+            "lat" : -23.494854,
+            "lng" : -46.522537
+        }
+    },
+    {
+        "place_id" : "4fabb4dfe4b050ddfdffc640",
+        "types" : "shopping",
+        "long_name" : "Shopping Maia",
+        "formatted_address" : "Av. Bartolomeu de Carlos, 230 - Jardim Flor da Montanha, Guarulhos - SP, 07097-420, Brasil",
+        "position": {
+            "lat" : -23.4435167,
+            "lng" : -46.5401821
+        }
+    },
+    {
+        "place_id" : "4b8851f9f964a520f1ee31e3",
+        "types" : "shopping",
+        "long_name" : "Internacional Shopping Guarulhos",
+        "formatted_address" : "Rodovia Presidente Dutra, Saída 225, s/n - Itapejica, Guarulhos - SP, 07034-911, Brasil",
+        "position": {
+            "lat" : -23.4886822,
+            "lng" : -46.5490185
+        }
+    }
+]

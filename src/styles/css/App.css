@@ -1,24 +1,113 @@
-.content {
+.menu {
     width: 100%;
     height: 100%;
 }
 
-.aside {
-    position: absolute;
-    display: inline-block;
-    width: 250px;
+#map {
+    width: 100%;
     height: 100%;
-    z-index: 2;
-    background-color: #6195a0;
 }
 
-.logo img {
+/* MENU */
+#fix-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 60px;
+    background-color: #22b573;
+}
+  
+#fix-bar .push {
+    position: relative;
+    left: 0;
+    height: 100%;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+  
+.hamburguer {
+    width: 72px;
+    height: 60px;
     display: block;
-    margin: 0 auto;
-    padding: 2em 0;
+    position: relative;
+    cursor: pointer;
+}
+  
+.hamburguer span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 24px;
+    background: #fff;
+    opacity: 1;
+    left: 24px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+    /* border: 1px solid #116317; */
 }
 
-.location-filter input {
+.hamburguer span:nth-child(1) {
+    top: 20px;
+}
+
+.hamburguer span:nth-child(2),
+.hamburguer span:nth-child(3) {
+    top: 28px;
+}
+
+.hamburguer span:nth-child(4) {
+    top: 36px;
+}
+
+#canvas {
+    /* position: relative; */
+    height: 100%;
+    overflow: hidden;
+}
+  
+#nav {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    padding-top: 12px;
+    padding-bottom: 60px;
+    background-color: #6195a0;
+    color: #fff;
+}
+
+#nav ul li {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: .5em;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+#nav ul li:hover {
+    color: #000;
+}
+  
+#nav .site-menu {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+
+#nav input {
     display: block;
     margin: 0 auto;
     width: 90%;
@@ -41,7 +130,7 @@
     text-transform: uppercase;
 }
 
-nav p {
+#nav p {
     font-size: 14px;
     text-align: center;
     color: #fff;
@@ -50,23 +139,80 @@ nav p {
     padding: 0.8em 0 1.3em 0;
 }
 
-nav ul li {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 400;
-    padding: .5em;
-    border-bottom: 1px solid #fff;
-    cursor: pointer;
-    -webkit-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+.logo img {
+    display: block;
+    margin: 2em auto 0 auto;
+    padding: 2em 0;
 }
-
-nav ul li:hover {
-    color: #000;
-}
-
-#map {
+  
+#content {
+    background-color: #fff;
+    position: fixed;
+    left: 0;
     width: 100%;
     height: 100%;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease, z-index 0s 0.5s, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, z-index 0s 0.5s;
+    transition: opacity 0.5s ease, transform 0.5s ease, z-index 0s 0.5s, -webkit-transform 0.5s ease;
+    background-color: rgba(0,0,0,0.5);
+}
+
+input#show-menu {
+    position: absolute;
+    opacity: 0;
+}
+
+input#show-menu:checked ~ #fix-bar .push {
+    -webkit-transform: translate3d(250px, 0, 0);
+            transform: translate3d(250px, 0, 0);
+}
+
+input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(1),
+input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(4) {
+    top: 28px;
+    width: 0;
+    left: 50%;
+}
+
+input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+input#show-menu:checked ~ #canvas .mask {
+    -webkit-transform: translate3d(250px, 0, 0);
+            transform: translate3d(250px, 0, 0);
+    transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+input#show-menu:checked ~ #canvas #nav,
+input#show-menu:checked ~ #fix-bar .logo {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+input#show-menu:checked ~ #canvas #content {
+    -webkit-transform: translate3d(250px, 0, 0);
+            transform: translate3d(250px, 0, 0);
 }
