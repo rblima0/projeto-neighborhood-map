@@ -216,3 +216,62 @@ input#show-menu:checked ~ #canvas #content {
     -webkit-transform: translate3d(250px, 0, 0);
             transform: translate3d(250px, 0, 0);
 }
+
+
+/* JANELA DE INFORMAÇÕES */
+.window-info h2 {
+    margin-bottom: 0.3em;
+}
+
+.window-info p {
+    padding: 0.1em 0;
+    font-size: 16px;
+}
+
+.window-info span {
+    font-weight: bold;
+}
+
+.window-info > a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #00ab5e;
+    font-size: 20px;
+}
+
+.window-more {
+    text-align: center;
+}
+
+.window-more a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #03A9F4;
+}
+
+.window-more a:hover {
+    color: #ea4335;
+}
+
+.window-rating {
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    margin: 0.2em auto;
+    background-color: #00ab5e;
+    text-align: center;
+    padding: 0.7em 0;
+}
+
+@media screen and (max-width: 600px) {
+    .window-info h2 {
+        font-size: 14px;
+    }
+
+    .window-info p {
+        font-size: 12px;
+    }
+}

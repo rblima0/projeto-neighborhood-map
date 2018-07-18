@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Marker, InfoWindow } from 'react-google-maps';
 import { getDetails } from '../utils/foursquare';
 
+import IconPark from '../styles/icons/park.svg';
+import IconZoo from '../styles/icons/zoo.svg';
+import IconShooping from '../styles/icons/shopping.svg';
+
 class MarkerInfo extends Component {
 
     state = {
@@ -26,6 +30,7 @@ class MarkerInfo extends Component {
 
     return (
         <Marker
+            icon={(location.types === "park") ? { url: IconPark } : (location.types === "zoo") ? { url: IconZoo } :{ url: IconShooping }}
             key={id}
             position={locationPosition}
             onClick={() => onToggleOpen(id, 'open')}
@@ -38,6 +43,21 @@ class MarkerInfo extends Component {
                 <div className="window-info">
                     {console.log(foursquareVenues)}
                     <h2>{ foursquareVenues.name }</h2>
+                    <p><span>Tipo:</span> { foursquareVenues.categories[0].name }</p>
+                    <p><span>Endereço:</span> { foursquareVenues.location.address }</p>
+                    <p><span>Cidade:</span> { foursquareVenues.location.city }</p>
+                    <p><span>UF:</span> { foursquareVenues.location.state}</p>
+                    <div className="window-more">
+                        <img src={ `${foursquareVenues.bestPhoto.prefix}250x200${foursquareVenues.bestPhoto.suffix}`} alt={ foursquareVenues.name }></img>
+                        <h3>{ foursquareVenues.hours !== undefined ? `${foursquareVenues.hours.status}` : `Horários não disponíveis` }</h3>
+                        <p>Mais informações: <a href={foursquareVenues.shortUrl}>CLIQUE AQUI</a></p>
+                    </div>
+
+                    <div className="window-rating">
+                        <p>Avaliação: <span>{foursquareVenues.rating}</span> de 10</p>
+                        <p>{foursquareVenues.reasons.items[0] !== undefined ? `${foursquareVenues.reasons.items[0].summary}` : `` }</p>
+                    </div>
+                    <a href={`http://maps.google.com/maps?daddr=${foursquareVenues.location.lat},${foursquareVenues.location.lng}`}>Quero Visitar</a>
                 </div>
             </InfoWindow>
         }
