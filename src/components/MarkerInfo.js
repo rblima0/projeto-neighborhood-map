@@ -16,20 +16,21 @@ class MarkerInfo extends Component {
     /* Carregando informações das localizações da API do Foursquare e tratando erros */
     componentDidMount() {
         const id = this.props.id;
-
         getDetails(id)
             .then(foursquareVenues => {
-                this.setState({ foursquareVenues })
                 if(foursquareVenues === undefined) {
-                    this.setState({ erro: true }) 
+                    this.setState({ erro: true}) 
+                } else {
+                    this.setState({ foursquareVenues })
                 }
-            }).catch(err => {
-                console.log('Foursquare API retornou erro', err);
-                this.setState({ erro: true })
-            });
+            })
+            .catch(err => {
+                console.log('Erro na API do Foursquare ', err);
+                this.setState({ erro: true });
+            })
     }
 
-  render() {
+    render() {
 
     const { foursquareVenues, erro } = this.state;
     const { id, location, locationPosition, onToggleOpen, clickId, isOpen } = this.props;
@@ -63,7 +64,7 @@ class MarkerInfo extends Component {
                         <p>Avaliação: <span>{foursquareVenues.rating}</span> de 10</p>
                         <p>{foursquareVenues.reasons.items[0] !== undefined ? `${foursquareVenues.reasons.items[0].summary}` : `` }</p>
                     </div>
-                    <a href={`http://maps.google.com/maps?daddr=${foursquareVenues.location.lat},${foursquareVenues.location.lng}`}>Quero Visitar</a>
+                    <a tabIndex="0" href={`http://maps.google.com/maps?daddr=${foursquareVenues.location.lat},${foursquareVenues.location.lng}`}>Quero Visitar</a>
                 </div>
             }
             </InfoWindow>

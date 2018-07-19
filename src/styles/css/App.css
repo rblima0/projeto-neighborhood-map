@@ -9,7 +9,7 @@
 }
 
 /* MENU */
-#fix-bar {
+#navbar-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,7 +19,7 @@
     background-color: #22b573;
 }
   
-#fix-bar .push {
+#navbar-header .push {
     position: relative;
     left: 0;
     height: 100%;
@@ -69,7 +69,7 @@
     overflow: hidden;
 }
   
-#nav {
+#navegacion {
     position: absolute;
     left: 0;
     height: 100%;
@@ -85,7 +85,7 @@
     color: #fff;
 }
 
-#nav ul li {
+#navegacion ul li {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
@@ -97,17 +97,17 @@
     transition: all .4s ease-in-out;
 }
 
-#nav ul li:hover {
+#navegacion ul li:hover {
     color: #000;
 }
   
-#nav .site-menu {
+#navegacion .menubar {
     position: relative;
     min-height: 100%;
     padding-bottom: 50px;
 }
 
-#nav input {
+#navegacion input {
     display: block;
     margin: 0 auto;
     width: 90%;
@@ -130,7 +130,7 @@
     text-transform: uppercase;
 }
 
-#nav p {
+#navegacion p {
     font-size: 14px;
     text-align: center;
     color: #fff;
@@ -176,24 +176,24 @@ input#show-menu {
     opacity: 0;
 }
 
-input#show-menu:checked ~ #fix-bar .push {
+input#show-menu:checked ~ #navbar-header .push {
     -webkit-transform: translate3d(250px, 0, 0);
             transform: translate3d(250px, 0, 0);
 }
 
-input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(1),
-input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(4) {
+input#show-menu:checked ~ #navbar-header .hamburguer span:nth-child(1),
+input#show-menu:checked ~ #navbar-header .hamburguer span:nth-child(4) {
     top: 28px;
     width: 0;
     left: 50%;
 }
 
-input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(2) {
+input#show-menu:checked ~ #navbar-header .hamburguer span:nth-child(2) {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
 }
 
-input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(3) {
+input#show-menu:checked ~ #navbar-header .hamburguer span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
 }
@@ -206,8 +206,8 @@ input#show-menu:checked ~ #canvas .mask {
     transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
-input#show-menu:checked ~ #canvas #nav,
-input#show-menu:checked ~ #fix-bar .logo {
+input#show-menu:checked ~ #canvas #navegacion,
+input#show-menu:checked ~ #navbar-header .logo {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
 }

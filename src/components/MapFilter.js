@@ -8,10 +8,10 @@ function MapFilter({ updateQuery, filterState, onToggleOpen }) {
     const { locations, locationslength } = filterState;
 
     return(
-        <div>
-        <div id="fix-bar">        
+        <aside>
+        <div id="navbar-header" role="main" aria-label="menu">        
             <div className="push">
-                <label className="hamburguer" htmlFor="show-menu">
+                <label className="hamburguer" aria-label="hamburguer" htmlFor="show-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -20,7 +20,7 @@ function MapFilter({ updateQuery, filterState, onToggleOpen }) {
             </div>
         </div>
 
-        <nav id="nav">
+        <nav id="navegacion">
             <div className="logo">
                 <img src={Logo} alt="Logotipo Neighborhood"></img>
             </div>
@@ -38,19 +38,20 @@ function MapFilter({ updateQuery, filterState, onToggleOpen }) {
 
             <p>Mostrando {locationslength.length} de {locations.length} lugares</p>
 
-            <ul className="site-menu">    
+            <ul className="menubar" tabIndex="0" role="menubar">    
                 { locationslength.map(location =>
                     <li
                         key={location.place_id}
-                        className="location-item"
                         onClick={() => onToggleOpen(location.place_id, 'open')}
+                        tabIndex="0"
+                        role="menuitem"
                     >{location.long_name}</li>
                 )}
             </ul>
         </nav>
 
         <label htmlFor="show-menu" className="mask"></label>
-        </div>
+        </aside>
     )
 }
 export default MapFilter;
