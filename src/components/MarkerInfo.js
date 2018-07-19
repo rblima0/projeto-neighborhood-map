@@ -9,24 +9,29 @@ import IconShooping from '../styles/icons/shopping.svg';
 class MarkerInfo extends Component {
 
     state = {
-        foursquareVenues: {}
+        foursquareVenues: {},
+        erro: false
     }
 
-    /* Carregando informações das localizações da API do Foursquare */
+    /* Carregando informações das localizações da API do Foursquare e tratando erros */
     componentDidMount() {
         const id = this.props.id;
 
         getDetails(id)
             .then(foursquareVenues => {
                 this.setState({ foursquareVenues })
+                if(foursquareVenues === undefined) {
+                    this.setState({ erro: true }) 
+                }
             }).catch(err => {
                 console.log('Foursquare API retornou erro', err);
+                this.setState({ erro: true })
             });
     }
 
   render() {
 
-    const { foursquareVenues } = this.state;
+    const { foursquareVenues, erro } = this.state;
     const { id, location, locationPosition, onToggleOpen, clickId, isOpen } = this.props;
 
     return (
@@ -41,6 +46,7 @@ class MarkerInfo extends Component {
                 key={id}
                 onCloseClick={() => onToggleOpen(id, 'close')}
             >
+            {erro ? <div className="erro"><h1>Erro na comunicação com a API</h1></div> : 
                 <div className="window-info">
                     <h2>{ foursquareVenues.name }</h2>
                     <p><span>Tipo:</span> { foursquareVenues.categories[0].name }</p>
@@ -59,6 +65,7 @@ class MarkerInfo extends Component {
                     </div>
                     <a href={`http://maps.google.com/maps?daddr=${foursquareVenues.location.lat},${foursquareVenues.location.lng}`}>Quero Visitar</a>
                 </div>
+            }
             </InfoWindow>
         }
       </Marker>
