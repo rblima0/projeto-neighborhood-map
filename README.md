@@ -2,6 +2,10 @@
 
 Demonstração: [https://rblima0.github.io/projeto-neighborhood-map](https://rblima0.github.io/projeto-neighborhood-map)
 
+<p align="center">
+<img src="https://github.com/rblima0/projeto-neighborhood-map/assets/14132289/6e8118df-869e-4ee6-a22e-2597c3fa1411" alt="neighborhood-map" width="300" height="300">
+</p>
+
 Desenvolvimento de aplicativo de página única apresentando um mapa de um bairro e adicionado recursos a esse mapa, incluindo locais em destaque, dados de terceiros sobre esses locais e formas de navegar pelo conteúdo.
 
 Usado a API de terceiros que fornecem conjuntos de dados valiosos para aumentar a qualidade do aplicativo.
